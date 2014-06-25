@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Sandbox">
+  <DataContextMoniker Name="/SandboxDataContext" />
+  <nestedChildShapes>
+    <classShape Id="70a40d36-a3a2-4948-81e3-79ef30f8fcad" absoluteBounds="3.5, 0.875, 2, 1.3862939453124998">
+      <DataClassMoniker Name="/SandboxDataContext/Job" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1ef8553e-0f1f-4e29-bf6f-006eb814ebe6" absoluteBounds="3.515, 1.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="364022f2-49e4-4de3-ba40-4860ee2f7af2" absoluteBounds="0.75, 1, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/SandboxDataContext/Project" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0f24369c-50a4-4ca6-a613-a591007d69e8" absoluteBounds="0.765, 1.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 1.59699625651042); (3.5 : 1.59699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SandboxDataContext/Project/Project_Job" />
+      <nodes>
+        <classShapeMoniker Id="364022f2-49e4-4de3-ba40-4860ee2f7af2" />
+        <classShapeMoniker Id="70a40d36-a3a2-4948-81e3-79ef30f8fcad" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
