@@ -21,5 +21,11 @@
         <classShapeMoniker Id="70a40d36-a3a2-4948-81e3-79ef30f8fcad" />
       </nodes>
     </associationConnector>
+    <classShape Id="7f795c1b-0b36-40ab-8691-35d0e532a98e" absoluteBounds="1.75, 3.375, 2, 1.3862939453125">
+      <DataClassMoniker Name="/SandboxDataContext/TestLargeTable" />
+      <nestedChildShapes>
+        <elementListCompartment Id="767f1da5-6588-443d-bceb-12398d5ce5e5" absoluteBounds="1.7650000000000001, 3.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

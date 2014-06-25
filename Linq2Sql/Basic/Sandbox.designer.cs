@@ -36,6 +36,9 @@ namespace Basic
     partial void InsertProject(Project instance);
     partial void UpdateProject(Project instance);
     partial void DeleteProject(Project instance);
+    partial void InsertTestLargeTable(TestLargeTable instance);
+    partial void UpdateTestLargeTable(TestLargeTable instance);
+    partial void DeleteTestLargeTable(TestLargeTable instance);
     #endregion
 		
 		public SandboxDataContext() : 
@@ -81,6 +84,14 @@ namespace Basic
 			get
 			{
 				return this.GetTable<Project>();
+			}
+		}
+		
+		public System.Data.Linq.Table<TestLargeTable> TestLargeTables
+		{
+			get
+			{
+				return this.GetTable<TestLargeTable>();
 			}
 		}
 	}
@@ -347,6 +358,116 @@ namespace Basic
 		{
 			this.SendPropertyChanging();
 			entity.Project = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TestLargeTable")]
+	public partial class TestLargeTable : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private string _TestCol1;
+		
+		private string _TestCol2;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnTestCol1Changing(string value);
+    partial void OnTestCol1Changed();
+    partial void OnTestCol2Changing(string value);
+    partial void OnTestCol2Changed();
+    #endregion
+		
+		public TestLargeTable()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TestCol1", DbType="NChar(100)")]
+		public string TestCol1
+		{
+			get
+			{
+				return this._TestCol1;
+			}
+			set
+			{
+				if ((this._TestCol1 != value))
+				{
+					this.OnTestCol1Changing(value);
+					this.SendPropertyChanging();
+					this._TestCol1 = value;
+					this.SendPropertyChanged("TestCol1");
+					this.OnTestCol1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TestCol2", DbType="NChar(100)")]
+		public string TestCol2
+		{
+			get
+			{
+				return this._TestCol2;
+			}
+			set
+			{
+				if ((this._TestCol2 != value))
+				{
+					this.OnTestCol2Changing(value);
+					this.SendPropertyChanging();
+					this._TestCol2 = value;
+					this.SendPropertyChanged("TestCol2");
+					this.OnTestCol2Changed();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 }

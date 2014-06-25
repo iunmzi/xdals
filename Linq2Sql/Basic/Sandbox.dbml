@@ -15,4 +15,11 @@
       <Association Name="Project_Job" Member="Jobs" ThisKey="id" OtherKey="ProjectId" Type="Job" />
     </Type>
   </Table>
+  <Table Name="dbo.TestLargeTable" Member="TestLargeTables">
+    <Type Name="TestLargeTable">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TestCol1" Type="System.String" DbType="NChar(100)" CanBeNull="true" />
+      <Column Name="TestCol2" Type="System.String" DbType="NChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>
