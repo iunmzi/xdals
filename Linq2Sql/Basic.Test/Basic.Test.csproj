@@ -53,6 +53,12 @@
     <Compile Include="TestBasic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Basic\Basic.csproj">
+      <Project>{034b5770-88c4-46ee-ab1d-8362b245d5b3}</Project>
+      <Name>Basic</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Basic.Test
 {
@@ -7,8 +6,17 @@ namespace Basic.Test
     public class TestBasic
     {
         [TestMethod]
-        public void TestMethod1()
+        public void Test_ProjectJobs()
         {
+            var proxy = new SandboxProxy();
+            proxy.ProjectJobs();
+        }
+
+        [TestMethod]
+        public void Test_BigData()
+        {
+            var proxy = new SandboxProxy();
+            proxy.BigData();
         }
     }
 }
